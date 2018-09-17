@@ -3,7 +3,7 @@ const {blake2bInit, blake2bUpdate, blake2bFinal} = require('blakejs/blake2b')
 
 // Authenticated sealing only prepends the nonce to the ciphertext. Anonymous
 // sealing also prepends a random public key.
-const overhead = nacl.box.overheadLength + nacl.box.publicKeyLength
+const overheadLength = nacl.box.overheadLength + nacl.box.publicKeyLength
 
 // Generates a 24 byte nonce that is a blake2b digest of the ephemeral
 // public key and the reipient's public key.
@@ -31,7 +31,7 @@ function sealNonce(epk, publicKey) {
 function seal(message, publicKey) {
     const ekp = nacl.box.keyPair()
 
-    let out = new Uint8Array(message.length + overhead)
+    let out = new Uint8Array(message.length + overheadLength)
     out.set(ekp.publicKey, 0)
 
     const nonce = sealNonce(ekp.publicKey, publicKey)
@@ -58,6 +58,7 @@ function sealOpen(ciphertext, publicKey, secretKey) {
 }
 
 module.exports = {
+    overheadLength: overheadLength,
     seal: seal,
     sealOpen: sealOpen
 }
