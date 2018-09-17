@@ -1,0 +1,26 @@
+{
+  "name": "tweetsodium",
+  "version": "0.0.1",
+  "description": "libsodium sealed cryptobox using tweetnacl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "github:mastahyeti/tweetsodium",
+  "author": "mastahyeti@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mastahyeti/tweetsodium/issues"
+  },
+  "homepage": "https://github.com/mastahyeti/tweetsodium#readme",
+  "dependencies": {
+    "tweetnacl": "^1.0.0",
+    "blakejs": "^1.1.0"
+  },
+  "devDependencies": {
+    "tape": "*",
+    "tweetnacl-util": "*",
+    "libsodium": "^0.7.3",
+    "libsodium-wrappers": "^0.7.3"
+  }
+}
