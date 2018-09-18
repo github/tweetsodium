@@ -2,7 +2,7 @@ const test = require('tape')
 const util = require('tweetnacl-util')
 const nacl = require('tweetnacl')
 const libsodium = require('libsodium-wrappers')
-const sodium = require('./index.js')
+const sodium = require('./dist/index.umd.js')
 
 test('basic round trip', function(t) {
     t.plan(1)

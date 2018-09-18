@@ -2,8 +2,15 @@
   "name": "tweetsodium",
   "version": "0.0.1",
   "description": "libsodium sealed cryptobox using tweetnacl",
-  "main": "index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
   "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && mkdir dist",
+    "build-esm": "BABEL_ENV=esm babel index.js -o dist/index.esm.js",
+    "build-umd": "BABEL_ENV=umd babel index.js -o dist/index.umd.js",
+    "build": "npm run build-esm && npm run build-umd",
+    "pretest": "npm run build",
     "test": "node test.js"
   },
   "repository": "github:mastahyeti/tweetsodium",
@@ -13,14 +20,42 @@
     "url": "https://github.com/mastahyeti/tweetsodium/issues"
   },
   "homepage": "https://github.com/mastahyeti/tweetsodium#readme",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "tweetnacl": "^1.0.0",
     "blakejs": "^1.1.0"
   },
   "devDependencies": {
-    "tape": "*",
-    "tweetnacl-util": "*",
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "libsodium": "^0.7.3",
-    "libsodium-wrappers": "^0.7.3"
+    "libsodium-wrappers": "^0.7.3",
+    "tape": "*",
+    "tweetnacl-util": "*"
+  },
+  "babel": {
+    "env": {
+      "esm": {
+        "presets": [
+          [
+            "@babel/env",
+            {
+              "modules": false
+            }
+          ]
+        ]
+      },
+      "umd": {
+        "plugins": [
+          "@babel/plugin-transform-modules-umd"
+        ],
+        "presets": [
+          "@babel/env"
+        ]
+      }
+    }
   }
 }

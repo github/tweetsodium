@@ -1,9 +1,9 @@
-const nacl = require('tweetnacl')
-const {blake2bInit, blake2bUpdate, blake2bFinal} = require('blakejs/blake2b')
+import nacl from 'tweetnacl'
+import {blake2bInit, blake2bUpdate, blake2bFinal} from 'blakejs'
 
 // Authenticated sealing only prepends the nonce to the ciphertext. Anonymous
 // sealing also prepends a random public key.
-const overheadLength = nacl.box.overheadLength + nacl.box.publicKeyLength
+export const overheadLength = nacl.box.overheadLength + nacl.box.publicKeyLength
 
 // Generates a 24 byte nonce that is a blake2b digest of the ephemeral
 // public key and the reipient's public key.
@@ -28,7 +28,7 @@ function sealNonce(epk, publicKey) {
 // Parameters:
 // - message - message Uint8Array to encrypt.
 // - publicKey - recipient's public key Uint8Array.
-function seal(message, publicKey) {
+export function seal(message, publicKey) {
     const ekp = nacl.box.keyPair()
 
     let out = new Uint8Array(message.length + overheadLength)
@@ -49,16 +49,10 @@ function seal(message, publicKey) {
 // Parameters:
 // - ciphertext - encrypted message Uint8Array.
 // - secretKey - secret key Uint8Array.
-function sealOpen(ciphertext, publicKey, secretKey) {
+export function sealOpen(ciphertext, publicKey, secretKey) {
     const epk = ciphertext.slice(0, nacl.box.publicKeyLength)
     const nonce = sealNonce(epk, publicKey)
     ciphertext = ciphertext.slice(nacl.box.publicKeyLength)
 
     return nacl.box.open(ciphertext, nonce, epk, secretKey)
-}
-
-module.exports = {
-    overheadLength: overheadLength,
-    seal: seal,
-    sealOpen: sealOpen
 }
