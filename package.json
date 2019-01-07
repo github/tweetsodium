@@ -11,7 +11,8 @@
     "build-umd": "BABEL_ENV=umd babel index.js -o dist/index.umd.js",
     "build": "npm run build-esm && npm run build-umd",
     "pretest": "npm run build",
-    "test": "node test.js"
+    "test": "node test.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": "github:mastahyeti/tweetsodium",
   "author": "mastahyeti@gmail.com",
