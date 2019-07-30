@@ -25,16 +25,16 @@
     "dist"
   ],
   "dependencies": {
-    "tweetnacl": "^1.0.0",
-    "blakejs": "^1.1.0"
+    "blakejs": "^1.1.0",
+    "tweetnacl": "^1.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
+    "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.1.0",
-    "libsodium": "^0.7.3",
-    "libsodium-wrappers": "^0.7.3",
-    "tape": "*",
+    "libsodium": "^0.7.5",
+    "libsodium-wrappers": "^0.7.5",
+    "tape": "^4.11.0",
     "tweetnacl-util": "*"
   },
   "babel": {

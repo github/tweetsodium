@@ -4,7 +4,7 @@
 
  ## Usage
 
- ```javascript
+```javascript
 const nacl = require('tweetnacl')
 const sodium = require('tweetsodium')
 
