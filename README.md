@@ -25,7 +25,7 @@ function decrypt(ciphertext) {
     const encoder = new TextEncoder()
     const ciphertextBytes = encoder.encode(ciphertext)
 
-    return sodium.sealOpen(ciphertextBytes, keyPair.PublicKey, keyPair.secretKey)
+    return sodium.sealOpen(ciphertextBytes, keyPair.publicKey, keyPair.secretKey)
 }
 ```
 
