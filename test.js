@@ -1,10 +1,10 @@
-const tape = require('tape');
+const test = require('tape');
 const util = require('tweetnacl-util');
 const nacl = require('tweetnacl');
 const libsodium = require('libsodium-wrappers');
 const sodium = require('./dist/index.umd.js');
 
-tape('basic round trip', function(t) {
+test('basic round trip', function(t) {
     t.plan(1);
 
     const msg = 'hello, world!';
@@ -17,7 +17,7 @@ tape('basic round trip', function(t) {
     t.equal(util.encodeUTF8(pt), msg);
 });
 
-tape('can decrypt ciphertext from libsodium', function(t) {
+test('can decrypt ciphertext from libsodium', function(t) {
     t.plan(1);
 
     libsodium.ready.then(function() {
@@ -34,7 +34,7 @@ tape('can decrypt ciphertext from libsodium', function(t) {
     });
 });
 
-tape('ciphertext can be decrypted by libsodium', function(t) {
+test('ciphertext can be decrypted by libsodium', function(t) {
     t.plan(1);
 
     libsodium.ready.then(function() {
