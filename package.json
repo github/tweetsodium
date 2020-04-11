@@ -11,7 +11,7 @@
     "build-umd": "BABEL_ENV=umd babel index.js -o dist/index.umd.js",
     "build": "npm run build-esm && npm run build-umd",
     "pretest": "npm run build",
-    "test": "node test.js",
+    "test": "node test.js && tsd",
     "prepublishOnly": "npm run build"
   },
   "repository": "github:mastahyeti/tweetsodium",
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/mastahyeti/tweetsodium#readme",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "dependencies": {
     "blakejs": "^1.1.0",
@@ -35,6 +36,7 @@
     "libsodium": "^0.7.5",
     "libsodium-wrappers": "^0.7.5",
     "tape": "^4.11.0",
+    "tsd": "^0.11.0",
     "tweetnacl-util": "*"
   },
   "babel": {

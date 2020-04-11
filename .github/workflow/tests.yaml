@@ -1,0 +1,18 @@
+name: tests
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '8', '10', '12', '13' ]
+    name: Node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install depedencies
+        run: npm run install
+      - name: Run tests
+        run: npm run pretest && npm run test
