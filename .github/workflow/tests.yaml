@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ '8', '10', '12', '13', '14']
+        node-version: [ '8', '10', '12', '13', '14', '15']
     name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
