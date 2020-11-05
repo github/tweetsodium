@@ -27,17 +27,17 @@
   ],
   "dependencies": {
     "blakejs": "^1.1.0",
-    "tweetnacl": "^1.0.1"
+    "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.1.0",
-    "libsodium": "^0.7.5",
-    "libsodium-wrappers": "^0.7.5",
-    "tape": "^4.11.0",
-    "tsd": "^0.11.0",
-    "tweetnacl-util": "*"
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "libsodium": "^0.7.8",
+    "libsodium-wrappers": "^0.7.8",
+    "tape": "^4.13.3",
+    "tsd": "^0.13.1",
+    "tweetnacl-util": "^0.15.1"
   },
   "babel": {
     "env": {
