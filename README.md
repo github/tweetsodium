@@ -1,4 +1,4 @@
- # tweetsodium [![build](https://travis-ci.org/github/tweetsodium.svg?branch=master)](https://travis-ci.org/mastahyeti/tweetsodium) ![tests](https://github.com/github/tweetsodium/workflows/tests/badge.svg)
+ # tweetsodium [![ci](https://github.com/github/tweetsodium/workflows/tests/badge.svg)](https://github.com/github/tweetsodium/actions?query=workflow%3Aci)
 
  This library implements [libsodium's sealed boxes](https://download.libsodium.org/doc/public-key_cryptography/sealed_boxes) using the [tweetnacl-js](https://github.com/dchest/tweetnacl-js) and [blakejs](https://github.com/dcposch/blakejs) libraries.
 
