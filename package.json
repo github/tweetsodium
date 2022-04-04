@@ -15,7 +15,7 @@
     "prepublishOnly": "npm run build"
   },
   "repository": "github:mastahyeti/tweetsodium",
-  "author": "mastahyeti@gmail.com",
+  "author": "GitHub, Inc. <opensource+webauthn-json@github.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mastahyeti/tweetsodium/issues"
