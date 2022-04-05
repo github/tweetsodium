@@ -1,4 +1,4 @@
-# ⚠️ `tweetsodium` is unmaintained ⚠️
+# ⚠️ `tweetsodium` is deprecated and unmaintained ⚠️
 
 Consider using [`libsodium.js`](https://github.com/jedisct1/libsodium.js), maintained by the same author as `libsodium`. For example:
 
